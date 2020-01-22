@@ -1,0 +1,12 @@
+ Pour réaliser une sauvegarde sur MAMP, sans avoir MySQL sur votre dans Homebrew.
+
+$> cd /Applications/MAMP/Library/bin/
+$> ./mysqldump --host=localhost -uUser_Name -pUser_Password DB_Name > ~/CHEMIN_SAUVEGARDE/File_Name.sql
+
+
+
+
+ Pour restaurer :
+
+$> cd /Applications/MAMP/Library/bin/
+$> ./mysqldump --host=localhost -uUser_Name -pUser_Password DB_Name < ~/CHEMIN_SAUVEGARDE/File_Name.sql
