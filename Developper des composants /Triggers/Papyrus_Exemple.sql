@@ -10,6 +10,16 @@ CREATE TRIGGER nom       --
    END                   --
 ---------------------------
 
+/*
+
+POUR AFFFICHER LA LISTE DES TRIGGERS UTILISER LA COMMANDE :
+SHOW TRIGGERS;
+
+POUR CHANGER LE MOTEUR DE STOCKAGE D'UNE TABLE :
+ALTER TABLE nom_table ENGINE=InnoDB;
+
+*/
+
 /**** PAPYRUS *****/
 /* Delimitation pour passer l'execution du trigger */
 DELIMITER |

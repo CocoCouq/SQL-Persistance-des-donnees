@@ -1,4 +1,8 @@
 /* Exercice Base cp */
+/* On peut utiliser des varaibles dans les procedures stockées
+DECLARE test INT;
+SET @test = 1;
+*/
 
 -- 1 : interdire la modification des réservations (on autorise l'ajout et la suppression).
 -- Changement de DELIMITER pour ne pas stopper après '[...]les reservations';
@@ -29,9 +33,7 @@ DELIMITER |
     	   SIGNAL SQLSTATE '40000' SET MESSAGE_TEXT = 'Trop de réservation pour l\'hotel';
   	  END IF;
     END |
-DELIMITER ;
 /* Trigger */
-DELIMITER |
   CREATE TRIGGER insert_reservation2 AFTER INSERT ON reservation
     FOR EACH ROW
     BEGIN
@@ -55,9 +57,7 @@ DELIMITER |
     	   SIGNAL SQLSTATE '40000' SET MESSAGE_TEXT = 'Déjà 3 réservations';
   	  END IF;
     END |
-DELIMITER ;
 /* Trigger */
-DELIMITER |
   CREATE TRIGGER insert_reservation2 AFTER INSERT ON reservation
     FOR EACH ROW
     BEGIN
@@ -80,9 +80,7 @@ DELIMITER |
     	 SIGNAL SQLSTATE '40000' SET MESSAGE_TEXT = 'Capacité max dépassée';
   	END IF;
   END |
-DELIMITER ;
 /* Trigger */
-DELIMITER |
   CREATE TRIGGER insert_chambre AFTER INSERT ON chambre
   FOR EACH ROW
   BEGIN
